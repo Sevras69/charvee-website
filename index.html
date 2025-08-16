@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>For Charvee 💖</title>
+  <meta name="description" content="A little website from Sarvesh to Charvee." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Hero media styling + helpers -->
+  <style>
+    .hero-media-frame{
+      position:relative;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.08);
+      overflow:hidden;
+    }
+    .hero-video, .hero-fallback{
+      width:100%;
+      height:auto;
+      display:block;
+      object-fit:cover;
+      max-height:70vh;
+      background:#0f0f14;
+    }
+    .hidden{ display:none !important; }
+    @media (max-width: 900px){
+      .hero-video, .hero-fallback{ max-height:40vh; }
+    }
+  </style>
+</head>
+<body>
+  <div class="floating-hearts" aria-hidden="true"></div>
+  <header class="site-header">
+    <nav class="container">
+      <a href="#home" class="brand">for <span>Charvee</span></a>
+      <div class="links">
+        <a href="#gallery">Photos</a>
+        <a href="#reasons">Reasons</a>
+        <a href="#memories">Memories</a>
+        <a href="#letter">Letter</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero container">
+      <div class="hero-text">
+        <h1>Hi Charvee <span aria-label="sparkles">✨</span></h1>
+        <p class="lead">This is a tiny corner of the internet to say something simple: I really, really like you.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#letter">Open the letter</a>
+          <a class="btn ghost" href="#gallery">See our photos</a>
+        </div>
+      </div>
+
+      <!-- FRONT PAGE HERO: video with image fallback -->
+      <figure class="hero-photo hero-media-frame" aria-label="Us">
+        <!-- fallback image shows first -->
+        <img id="heroFallback" class="hero-fallback" src="assets/hoco-ask.jpg" alt="Us holding the HOCO poster" />
+        <!-- video tries to load; if it plays, the image hides -->
+        <video id="heroVideo"
+               class="hero-video hidden"
+               autoplay
+               loop
+               muted
+               playsinline
+               poster="assets/hoco-ask.jpg">
+          <source src="assets/charvee-video.mp4" type="video/mp4">
+          <!-- if the browser can’t play, it will keep the image -->
+        </video>
+      </figure>
+    </section>
+
+    <section id="gallery" class="section container">
+      <h2>Some favorites 📸</h2>
+      <p class="section-sub">Just a few snapshots I love.</p>
+      <div class="grid gallery">
+        <figure class="card reveal">
+          <img src="assets/date-night.jpg" alt="Date night selfie" />
+          <figcaption>Date night glow</figcaption>
+        </figure>
+        <figure class="card reveal">
+          <img src="assets/hoco-ask.jpg" alt="HOCO poster proposal" />
+          <figcaption>HOCO proposal</figcaption>
+        </figure>
+        <figure class="card reveal">
+          <img src="assets/playful-mask.jpg" alt="Goofy masked-up selfie" />
+          <figcaption>Our goofy side</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="reasons" class="section alt">
+      <div class="container">
+        <h2>Why I like you</h2>
+        <p class="section-sub">Short list. Endless reasons.</p>
+        <ul class="reasons">
+          <li><span>🫶</span>Your laugh makes my day better, every time.</li>
+          <li><span>🌙</span>You’re calm, thoughtful, and always down for late-night talks.</li>
+          <li><span>🎧</span>You share music, memes, and moments that feel like home.</li>
+          <li><span>💡</span>You push me to grow and still make me feel safe being myself.</li>
+          <li><span>✨</span>Even ordinary days feel special with you.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="memories" class="section container">
+      <h2>Little memories, big smiles</h2>
+      <div class="timeline">
+        <article class="moment reveal">
+          <img src="assets/hoco-ask.jpg" alt="HOCO poster proposal" />
+          <div>
+            <h3>“I’d build pyramids…”</h3>
+            <p>Our HOCO poster moment in the lot — cheesy, cute, perfect.</p>
+          </div>
+        </article>
+        <article class="moment reveal">
+          <img src="assets/date-night.jpg" alt="Dressed up selfie" />
+          <div>
+            <h3>Dressed up, still us</h3>
+            <p>We clean up nice, but it’s the way you look at me that I remember.</p>
+          </div>
+        </article>
+        <article class="moment reveal">
+          <img src="assets/playful-mask.jpg" alt="Playful selfie" />
+          <div>
+            <h3>Goofy together</h3>
+            <p>Zero notes. 10/10 silliness. Would do again.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="letter" class="section alt">
+      <div class="container letter">
+        <h2>Dear Charvee,</h2>
+        <p>
+          I’m not great at saying all of this out loud, so here it is in writing: you make
+          the best parts of my day even brighter. I love how easy it is to be around you,
+          how you listen, how we laugh at dumb things, and how everything feels lighter
+          when it’s the two of us. I like you — a lot — and I’m really grateful you’re in my life.
+        </p>
+        <p>— Sarvesh</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>Made with <span aria-label="heart">♥</span> by Sarvesh for Charvee</small>
+    </div>
+  </footer>
+
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+    <button class="close" aria-label="Close" title="Close">×</button>
+    <img src="" alt="Expanded view" />
+  </div>
+
+  <script>
+    // show video when it's actually ready; otherwise keep the image
+    const vid = document.getElementById('heroVideo');
+    const img = document.getElementById('heroFallback');
+    if (vid) {
+      const showVideo = () => { img.classList.add('hidden'); vid.classList.remove('hidden'); };
+      vid.addEventListener('canplay', showVideo, { once: true });
+      vid.addEventListener('playing', showVideo, { once: true });
+      vid.addEventListener('error', () => { img.classList.remove('hidden'); vid.classList.add('hidden'); });
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
